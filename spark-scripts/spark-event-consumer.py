@@ -52,7 +52,7 @@ stream_df = (
     spark.readStream.format("kafka")
     .option("kafka.bootstrap.servers", f"{kafka_host}:9092")
     .option("subscribe", kafka_topic)
-    .option("startingOffsets", "earliest")
+    .option("startingOffsets", "latest")
     .load()
 )
 
